@@ -9,16 +9,84 @@
       href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap"
       rel="stylesheet"
     />
+    
   </head>
   <body>
     <header>
       <div class="headertop">
         <p>Website on Progress</p>
-        <h1>COMMING SOON</h1>
+        <h1>LIVE IN </h1>
         <hr />
         <p id="text"></p>
       </div>
     </header>
+
+    <div class = "daysleft">
+			<div class = "days"> <!-- no of days   -->
+				<h1 class = "day">0</h1>
+				<h3>DAYS</h3>
+			</div>
+
+			<h2>:</h2>
+
+			<div class = "hours"><!-- HOUR   -->
+				<h1 class = "hour">0</h1>
+				<h3>HOUR</h3>
+			</div>
+
+			<h2>:</h2>
+
+			<div class = "mins"><!-- MINUTE   -->
+				<h1 class = "min">0</h1>
+				<h3>MINUTE</h3>
+			</div>
+
+			<h2>:</h2>
+
+			<div class = "secs"><!-- SCEOND   -->
+				<h1 class = "sec">0</h1>
+				<h3>SECOND</h3>
+		</div>
+		<script>
+			let day = document.querySelector('.day');
+			let hour= document.querySelector('.hour');
+			let min = document.querySelector('.min');
+			let sec = document.querySelector('.sec');
+
+			var days=10;    ////-SMARAN YO VARIABLE MA KATI DIN HO TYO AFFNAI HISAB LE HALDA HUNCHA AAILE 5 CHA CHANGE GARERA JATI BANAUDA NI HUNCHA -------///	
+
+			var hours=23,minutes=32,seconds=44;
+
+			setInterval(()=>{
+
+				seconds--;
+				if(seconds <=0){
+					seconds = 60;
+					minutes--;    //if 10 seconds 10 then increase the min
+				}    //starting with second
+
+				if(minutes <=0){
+					minutes= 60;
+					hours--;
+				}
+
+				if(hours <=0){
+					hours = 24;
+					days--;
+				}
+
+				if(days === -1){
+					alert("Website is Live!");
+					return 
+				}
+				sec.innerHTML = seconds;
+				min.innerHTML = minutes;
+				hour.innerHTML = hours;
+				day.innerHTML = days; 
+
+			},1000)
+
+		</script>
   </body>
  
 </html>
